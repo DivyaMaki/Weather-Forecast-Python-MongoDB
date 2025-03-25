@@ -1,56 +1,113 @@
 # Weather Forecast Application
 
 ## Overview
-This Streamlit-based web application fetches real-time weather data using the OpenWeatherMap API and predicts future temperatures using a linear regression model.
 
-## Features
-- Fetches real-time weather data for a given city.
-- Displays weather parameters like temperature, humidity, and weather conditions.
-- Predicts future temperatures using linear regression.
-- Provides a user-friendly interface with Streamlit.
-
-## Requirements
-Ensure you have the following installed:
-
-- Python 3.x
-- Streamlit
-- Requests
-- Pandas
-- Scikit-learn
+This tool helps users analyze logistics data, offering insights into supplier performance, trip classifications, material bookings, clustering patterns, and vehicle efficiency. Results are displayed in an interactive GUI with visualizations like pie charts, bar graphs, and scatter plots.
 
 ## Installation
-1. Clone this repository:
-   bash
-   git clone https://github.com/DivyaMaki/Weather-Forecast-Python-MongoDB
-   cd Weather-Prediction
-   
 
-2. Install dependencies:
-   bash
-   pip install -r requirements.txt
-   
+### Prerequisites
 
-## Usage
-1. Run the Streamlit app:
-   bash
-   streamlit run app.py
-   
-2. Enter the city name in the input field.
-3. View the real-time weather data and predicted temperature trends.
+   * Python 3.8 or higher
 
-## API Key Setup
-To use the OpenWeatherMap API, obtain an API key from [OpenWeatherMap](https://openweathermap.org/api) and set it in your environment:
-bash
-export WEATHER_API_KEY='your_api_key_here'
+   * Git (optional, for cloning)
+     
+   * Clone the Repository
+     
+     ```
+     git clone https://github.com/DivyaMaki/Weather-Forecast-Python-MongoDB.git
+     cd data-analysis-tool
+     ```
+     
+## Install Dependencies Create a requirements.txt with:
 
-Or set it directly in the script:
-python
-API_KEY = 'your_api_key_here'
+   * pandas
+   * matplotlib
+   * scikit-learn
+   * seaborn
+     
+Run the Tool
+
+```
+python app.py
+```
 
 
-## Project Structure
+> Note: You’ll need a CSV file (e.g., Delivery_truck_trip_data.csv) with columns like BookingID_Date, supplierNameCode, and vehicleType.
 
-📂 your-repo
-├── weather.py                # Main Streamlit app script
-├── requirements.txt      # Required Python libraries
-├── README.md             # Documentation
+
+Usage
+
+> Launch the app: python app.py
+
+* Choose an analysis type from the dropdown menu.
+
+* Upload a CSV file and enter any required inputs (e.g., dates, column names).
+
+* View results in the GUI, including text summaries and charts.
+
+Example
+
+## To analyze vehicle efficiency:
+
+   * Select "Vehicle Distance and Fuel Consumption Calculator."
+
+   * Load your CSV.
+
+   * Enter a date range (e.g., 01-01-2025 to 31-01-2025).
+
+   * Click "Calculate" to see distance and fuel stats with a bar chart.
+
+## Features
+
+### Supplier Accuracy Classification
+
+   * Tracks on-time and delayed deliveries by supplier.
+
+   * Shows top 10 performers in pie charts.
+
+### Trip Classification
+
+   * Classifies trips as "Market" or "Regular" using Naive Bayes.
+
+   * Includes a confusion matrix and customer booking bar charts.
+
+### Material Booking Analysis
+
+   * Summarizes material shipments by supplier and customer.
+
+   * Displays counts in a horizontal bar graph.
+
+### KMeans Clustering
+
+   * Clusters data by supplier and location (state).
+
+   * Visualizes results in scatter plots for "Market" and "Regular" trips.
+
+### Vehicle Distance and Fuel Consumption
+
+   * Calculates total distance and fuel use by vehicle type.
+
+   * Presents data with a bar chart.
+
+## Requirements
+
+   * Python: 3.8+
+
+   ### Libraries:
+
+   * pandas - Data processing
+
+   * matplotlib - Visualizations
+
+   * scikit-learn - Machine learning
+
+   * seaborn - Enhanced plotting
+
+   * tkinter - GUI (included with Python)
+
+Install with:
+
+```
+pip install pandas matplotlib scikit-learn seaborn
+```
